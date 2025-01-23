@@ -65,7 +65,7 @@ def result():
     if winner:  
         return render_template('result.html', message=f"Semua pemain selamat! Permainan selesai.")  
     else:  
-        return render_template('result.html', message=f"{player} kalah. Permainan selesai.", sound='shoot')  
+        return render_template('result.html', message=f"{player} Tertembak. Permainan selesai.", sound='shoot')  
   
 if __name__ == '__main__':  
     app.run(debug=True)  
