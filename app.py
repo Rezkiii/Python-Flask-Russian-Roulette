@@ -7,7 +7,7 @@ app.secret_key = 'your_secret_key'
 def setup_game(num_players):  
     players = [f"Pemain {i+1}" for i in range(num_players)]  
     revolver = [0] * 6  
-    revolver[random.randint(0, 5)] = 1  # Menempatkan peluru di ruang acak  
+    revolver[random.randint(0, 5)] = 1   
     return players, revolver  
   
 @app.route('/', methods=['GET', 'POST'])  
