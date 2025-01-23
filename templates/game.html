@@ -1,0 +1,34 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Russian Roulette - Giliran {{ player }}</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+</head>  
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">  
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">  
+        <h1 class="text-2xl font-bold mb-4 text-gray-800">Russian Roulette</h1>  
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">Giliran {{ player }}</h2>  
+        {% if error %}  
+            <p class="text-red-500 mb-4">{{ error }}</p>  
+        {% endif %}  
+        <form method="POST" class="space-y-4">  
+            <div>  
+                <label for="choice" class="block text-gray-700">Apakah Anda ingin menarik pelatuk?</label>  
+                <select id="choice" name="choice" required class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500">  
+                    <option value="ya">Ya</option>  
+                    <option value="tidak">Tidak</option>  
+                </select>  
+            </div>  
+            <button type="submit" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Lanjutkan</button>  
+        </form>  
+        {% if sound == 'click' %}  
+            <audio id="clickSound" src="{{ url_for('static', filename='click.mp3') }}" autoplay></audio>  
+            <script>  
+                document.getElementById('clickSound').play();  
+            </script>  
+        {% endif %}  
+    </div>  
+</body>  
+</html>  

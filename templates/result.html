@@ -1,0 +1,22 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Russian Roulette - Hasil</title>  
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">  
+</head>  
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">  
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md text-center">  
+        <h1 class="text-2xl font-bold mb-4 text-gray-800">Russian Roulette</h1>  
+        <h2 class="text-xl font-semibold mb-4 text-gray-700">{{ message }}</h2>  
+        {% if sound == 'shoot' %}  
+            <audio id="shootSound" src="{{ url_for('static', filename='shoot.mp3') }}" autoplay></audio>  
+            <script>  
+                document.getElementById('shootSound').play();  
+            </script>  
+        {% endif %}  
+        <a href="{{ url_for('index') }}" class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600 block">Mulai Permainan Baru</a>  
+    </div>  
+</body>  
+</html>  
